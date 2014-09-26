@@ -11,15 +11,15 @@ var songs = require('./utilities/songs.json'),
 var app = express();
 app.engine('html', require('ejs').renderFile);
 app.use(express.static(path.join(__dirname, 'public')));
-app.use( bodyParser.json() );       // to support JSON-encoded bodies
-app.use( bodyParser.urlencoded() ); // to support URL-encoded bodies
+app.use(bodyParser.json());       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded()); // to support URL-encoded bodies
 
 app.get('/', function(req, res) {
   res.render('public/index.html');
 });
 
-app.get('/songs/list', function(req, res) {
-  res.send(songsList);
+app.get('/playlist', function(req, res) {
+  res.send(_bmsPlayer.getPlaylist());
 });
 
 app.post('/upvote/:id', function(req, res) {

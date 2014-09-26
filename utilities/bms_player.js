@@ -1,13 +1,13 @@
 var Player = require('player');
 
-function _bmsPlayer(songsList) {
-  this.songsList = songsList;
+function _bmsPlayer(playlist) {
+  this.playlist = playlist;
   this.init();
 };
 
 _bmsPlayer.prototype = {
   init: function() {
-    var list = this.songsList.map(function(song) {
+    var list = this.playlist.map(function(song) {
       return song.path;
     });
 
@@ -45,8 +45,8 @@ _bmsPlayer.prototype = {
     this.player.add('http://someurl.com/anothersong.mp3');
   },
 
-  getList: function() {
-    return this.player.playlist();
+  getPlaylist: function() {
+    return this.playlist;
   },
 
   upvote: function(songId) {
