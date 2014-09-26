@@ -14,7 +14,16 @@ Hello, BMS Audio Player !
   <script type="text/javascript" src="bmsplayer.js"></script>
   <script type="text/javascript">
     window.onload = function() {
+      /* first request, no delay of 1000s */
       makeRequest();
+
+      /* polling */
+      (function poll(){
+        setTimeout(function(){
+          poll();
+          makeRequest();
+        }, 1000);
+      })();
     }
   </script>
 </body>

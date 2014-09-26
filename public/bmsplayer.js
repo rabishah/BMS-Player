@@ -15,10 +15,23 @@ var makeRequest = function() {
 }
 
 var list = function(playlist) {
-  var playlistElm = document.querySelector('#playlist');
+  var playlistElm = document.querySelector('#playlist'),
+    liElm = playlistElm.children;
+
   playlist.forEach(function(song) {
-    var li=document.createElement('li');
-    playlistElm.appendChild(li);
-    li.innerHTML = song.name;
+    var isPresent = false;
+    if (liElm.length) {
+      for (var i = 0; i < liElm.length; i++) {
+        if (liElm.item(i).innerHTML === song.name) {
+          isPresent = true;
+        }
+      }
+    }
+
+    if (!isPresent) {
+      var li=document.createElement('li');
+      playlistElm.appendChild(li);
+      li.innerHTML = song.name;
+    }
   });
 };
