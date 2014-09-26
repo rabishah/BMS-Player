@@ -47,6 +47,10 @@ _bmsPlayer.prototype = {
 
   getList: function() {
     return this.player.playlist();
+  },
+
+  upvote: function(songId) {
+    console.log('song id', songId);
   }
 };
 
