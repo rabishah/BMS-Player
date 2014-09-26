@@ -19,7 +19,8 @@ app.get('/', function(req, res) {
 });
 
 app.get('/playlist', function(req, res) {
-  res.send(_bmsPlayer.getPlaylist());
+  // /!\ not able to send json object
+  res.send(JSON.stringify(_bmsPlayer.getPlaylist()));
 });
 
 app.post('/upvote/:id', function(req, res) {

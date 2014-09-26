@@ -1,13 +1,13 @@
 {
   "list": [{
     "id": 0,
-    "song": "A Great Day For Freedom",
+    "name": "A Great Day For Freedom",
     "artist": "Pink Floyd",
     "path": "./songs/agreatdayforfreedom.mp3",
     "state": "0"
   },{
     "id": 1,
-    "song": "Lost For Words",
+    "name": "Lost For Words",
     "artist": "Pink Floyd",
     "path": "./songs/lostforwords.mp3",
     "state": "0"
