@@ -65,11 +65,15 @@ var list = function(playlist) {
 };
 
 var addSongBtn = document.querySelector('#addSong'),
-  songSrc = document.querySelector('#songSrc');
+  songSrc = document.querySelector('#songSrc'),
+  songName = document.querySelector('#songName'),
+  songArtist = document.querySelector('#songArtist');
 
 addSongBtn.onclick = function(e) {
   var params = {
-    src : songSrc.value
+    src: songSrc.value,
+    name: songName.value,
+    artist: songArtist.value
   }
 
   makePostRequest(params);

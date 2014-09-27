@@ -42,12 +42,12 @@ _bmsPlayer.prototype = {
     this.player.stop();
   },
 
-  add: function(src) {
+  add: function(song) {
     var _newSong = {
       "id": this.playlist.length,
-      "name": "O re Kanchi",
-      "artist": "Someone gives a fuck",
-      "path": src,
+      "name": song.name,
+      "artist": song.artist,
+      "path": song.src,
       "state": "0"
     };
 
