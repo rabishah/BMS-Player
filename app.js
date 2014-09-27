@@ -29,8 +29,9 @@ app.post('/upvote/:id', function(req, res) {
 });
 
 app.post('/song', function(req, res) {
-  _bmsPlayer.add({src : req.body.src,
-                name : req.body.name});
+  _bmsPlayer.add({src: req.body.src,
+                name: req.body.name,
+                artist: req.body.artist});
   res.send(201);
 });
 

@@ -74,7 +74,7 @@ addSongBtn.onclick = function(e) {
     src: songSrc.value,
     name: songName.value,
     artist: songArtist.value
-  }
+  };
 
   makePostRequest(params);
 }

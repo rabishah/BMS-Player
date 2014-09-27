@@ -54,7 +54,7 @@ _bmsPlayer.prototype = {
     /* update playlist */
     this.playlist.push(_newSong);
     /* queue player */
-    this.player.add(src);
+    this.player.add(song.src);
   },
 
   getPlaylist: function() {
