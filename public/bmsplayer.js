@@ -32,6 +32,16 @@ var list = function(playlist) {
       var li=document.createElement('li');
       playlistElm.appendChild(li);
       li.innerHTML = song.name;
+
+      /* add selection style */
+      if (song.state === 'playing') {
+        li.classList.add('selected');
+      }
+      if (song.state === 'played') {
+        li.classList.add('played');
+      }
+    } else {
+      // Update playlist
     }
   });
 };

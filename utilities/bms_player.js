@@ -21,11 +21,13 @@ _bmsPlayer.prototype = {
 
     this.player.on('playing',function(item){
       console.log('im playing... src:' + JSON.stringify(item));
-    });
+      this.playlist[item['_id']].state = 'playing';
+    }.bind(this));
 
     this.player.on('playend',function(item){
       console.log('src:' + JSON.stringify(item) + ' play done, switching to next one ...');
-    });
+      this.playlist[item['_id']].state = 'played';
+    }.bind(this));
 
     this.player.on('error', function(err){
       console.log(err);
