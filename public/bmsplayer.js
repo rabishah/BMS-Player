@@ -42,6 +42,14 @@ var list = function(playlist) {
       for (var i = 0; i < liElm.length; i++) {
         if (liElm.item(i).innerHTML === song.name) {
           isPresent = true;
+
+          /* update list if present */
+          if (song.state === 'playing') {
+            liElm.item(i).classList.add('selected');
+          }
+          if (song.state === 'played') {
+            liElm.item(i).classList.add('played');
+          }
         }
       }
     }
@@ -58,8 +66,6 @@ var list = function(playlist) {
       if (song.state === 'played') {
         li.classList.add('played');
       }
-    } else {
-      // Update playlist
     }
   });
 };
