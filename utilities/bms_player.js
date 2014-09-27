@@ -43,9 +43,18 @@ _bmsPlayer.prototype = {
   },
 
   add: function(src) {
-    console.log('src', src);
-    // add another song to playlist
-    //this.player.add(src);
+    var _newSong = {
+      "id": this.playlist.length,
+      "name": "O re Kanchi",
+      "artist": "Someone gives a fuck",
+      "path": src,
+      "state": "0"
+    };
+
+    /* update playlist */
+    this.playlist.push(_newSong);
+    /* queue player */
+    this.player.add(src);
   },
 
   getPlaylist: function() {
