@@ -20,8 +20,7 @@ var makePostRequest = function(params) {
   http.open("POST", url, true);
 
   // Send the proper header information along with the request
-  http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  console.log('params length', params.length);
+  http.setRequestHeader("Content-type", "application/json");
   http.setRequestHeader("Content-length", params.length);
   http.setRequestHeader("Connection", "close");
 
@@ -30,7 +29,7 @@ var makePostRequest = function(params) {
       console.log("lets see response", http.responseText);
     }
   }
-  http.send(params);
+  http.send(JSON.stringify(params));
 }
 
 var list = function(playlist) {

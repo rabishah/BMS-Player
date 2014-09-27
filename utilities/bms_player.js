@@ -42,9 +42,10 @@ _bmsPlayer.prototype = {
     this.player.stop();
   },
 
-  add: function() {
+  add: function(src) {
+    console.log('src', src);
     // add another song to playlist
-    this.player.add('http://someurl.com/anothersong.mp3');
+    //this.player.add(src);
   },
 
   getPlaylist: function() {

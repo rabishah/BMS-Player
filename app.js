@@ -29,7 +29,7 @@ app.post('/upvote/:id', function(req, res) {
 });
 
 app.post('/song', function(req, res) {
-  console.log('song', req.body);
+  _bmsPlayer.add(req.body.src);
   res.send(201);
 });
 
