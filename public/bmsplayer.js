@@ -14,6 +14,25 @@ var makeRequest = function() {
   }
 }
 
+var makePostRequest = function(params) {
+  var http = new XMLHttpRequest();
+  var url = "http://localhost:3000/song";
+  http.open("POST", url, true);
+
+  // Send the proper header information along with the request
+  http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  console.log('params length', params.length);
+  http.setRequestHeader("Content-length", params.length);
+  http.setRequestHeader("Connection", "close");
+
+  http.onreadystatechange = function() {//Call a function when the state changes.
+    if(http.readyState == 4 && http.status == 200) {
+      console.log("lets see response", http.responseText);
+    }
+  }
+  http.send(params);
+}
+
 var list = function(playlist) {
   var playlistElm = document.querySelector('#playlist'),
     liElm = playlistElm.children;
@@ -45,3 +64,14 @@ var list = function(playlist) {
     }
   });
 };
+
+var addSongBtn = document.querySelector('#addSong'),
+  songSrc = document.querySelector('#songSrc');
+
+addSongBtn.onclick = function(e) {
+  var params = {
+    src : songSrc.value
+  }
+
+  makePostRequest(params);
+}

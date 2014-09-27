@@ -28,6 +28,11 @@ app.post('/upvote/:id', function(req, res) {
   res.send(201);
 });
 
+app.post('/song', function(req, res) {
+  console.log('song', req.body);
+  res.send(201);
+});
+
 /* server running */
 var server = app.listen(3000, function()  {
   console.log('Listening on %d', 3000);
