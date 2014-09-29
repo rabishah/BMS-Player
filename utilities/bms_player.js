@@ -32,6 +32,10 @@ _bmsPlayer.prototype = {
     this.player.on('error', function(err){
       console.log(err);
     });
+
+    this.player.on('downloading', function(item) {
+      console.log('downloading', item);
+    });
   },
 
   next: function() {
@@ -48,7 +52,8 @@ _bmsPlayer.prototype = {
       "name": song.name,
       "artist": song.artist,
       "path": song.src,
-      "state": "0"
+      "state": "0",
+      "upvotes": 0
     };
 
     /* update playlist */
@@ -63,6 +68,7 @@ _bmsPlayer.prototype = {
 
   upvote: function(songId) {
     console.log('song id', songId);
+    ++this.playlist[songId].upvotes;
   }
 };
 

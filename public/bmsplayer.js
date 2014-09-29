@@ -1,3 +1,5 @@
+var _playlist = [];
+
 var makeRequest = function() {
   var _request = new XMLHttpRequest();
   var _url = "http://localhost:3000/playlist"
@@ -14,9 +16,8 @@ var makeRequest = function() {
   }
 }
 
-var makePostRequest = function(params) {
+var makePostRequest = function(params, url) {
   var http = new XMLHttpRequest();
-  var url = "http://localhost:3000/song";
   http.open("POST", url, true);
 
   // Send the proper header information along with the request
@@ -35,6 +36,10 @@ var makePostRequest = function(params) {
 var list = function(playlist) {
   var playlistElm = document.querySelector('#playlist'),
     liElm = playlistElm.children;
+
+  /* empty current playlist */
+  _playlist.length = 0;
+  _playlist = playlist;
 
   playlist.forEach(function(song) {
     var isPresent = false;
@@ -62,9 +67,11 @@ var list = function(playlist) {
       /* add selection style */
       if (song.state === 'playing') {
         li.classList.add('selected');
-      }
-      if (song.state === 'played') {
+      } else if (song.state === 'played') {
         li.classList.add('played');
+      } else {
+        /* add heart button */
+        li.appendChild(_getUpvoteBtn());
       }
     }
   });
@@ -82,5 +89,26 @@ addSongBtn.onclick = function(e) {
     artist: songArtist.value
   };
 
-  makePostRequest(params);
+  makePostRequest(params, "http://localhost:3000/song");
+}
+
+var _getUpvoteBtn = function() {
+  var btn = document.createElement('button');
+  btn.innerHTML = 'Upvote';
+  btn.setAttribute('onclick', 'upvote(event)');
+  return btn;
+};
+
+var upvote = function(event) {
+  var _song = event.srcElement.parentElement.innerText.replace(/Upvote/, '');
+  _playlist.forEach(function(song, idx) {
+    if (song.name === _song) {
+      var params = {
+        id: idx
+      };
+
+      /* make post request */
+      makePostRequest(params, "http://localhost:3000/upvote" + '/' + idx);
+    }
+  });
 }

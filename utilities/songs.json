@@ -4,12 +4,14 @@
     "name": "A Great Day For Freedom",
     "artist": "Pink Floyd",
     "path": "./songs/agreatdayforfreedom.mp3",
-    "state": "0"
+    "state": "0",
+    "upvotes": "0"
   },{
     "id": 1,
     "name": "Lost For Words",
     "artist": "Pink Floyd",
     "path": "./songs/lostforwords.mp3",
-    "state": "0"
+    "state": "0",
+    "upvotes": "0"
   }]
 }
