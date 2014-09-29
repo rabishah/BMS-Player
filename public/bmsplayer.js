@@ -69,10 +69,9 @@ var list = function(playlist) {
         li.classList.add('selected');
       } else if (song.state === 'played') {
         li.classList.add('played');
-      } else {
-        /* add heart button */
-        li.appendChild(_getUpvoteBtn());
       }
+      /* add heart button */
+      // li.appendChild(_getUpvoteBtn());
     }
   });
 };
