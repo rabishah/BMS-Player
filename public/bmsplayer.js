@@ -2,7 +2,7 @@ var _playlist = [];
 
 var makeRequest = function() {
   var _request = new XMLHttpRequest();
-  var _url = "http://localhost:3000/playlist"
+  var _url = "http://192.168.0.100:3000/playlist"
 
   _request.open("GET", _url, false);
   // _request.setRequestHeader("User-Agent",navigator.userAgent);
@@ -88,7 +88,7 @@ addSongBtn.onclick = function(e) {
     artist: songArtist.value
   };
 
-  makePostRequest(params, "http://localhost:3000/song");
+  makePostRequest(params, "http://192.168.0.100:3000/song");
 }
 
 var _getUpvoteBtn = function() {
@@ -107,7 +107,7 @@ var upvote = function(event) {
       };
 
       /* make post request */
-      makePostRequest(params, "http://localhost:3000/upvote" + '/' + idx);
+      makePostRequest(params, "http://192.168.0.100:3000/upvote" + '/' + idx);
     }
   });
 }
