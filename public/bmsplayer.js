@@ -2,7 +2,7 @@ var _playlist = [];
 
 var makeRequest = function() {
   var _request = new XMLHttpRequest();
-  var _url = "http://192.168.0.100:3000/playlist"
+  var _url = "http://192.168.3.87:3000/playlist"
 
   _request.open("GET", _url, false);
   // _request.setRequestHeader("User-Agent",navigator.userAgent);
@@ -70,26 +70,25 @@ var list = function(playlist) {
       } else if (song.state === 'played') {
         li.classList.add('played');
       }
-      /* add heart button */
       // li.appendChild(_getUpvoteBtn());
     }
   });
 };
 
-var addSongBtn = document.querySelector('#addSong'),
-  songSrc = document.querySelector('#songSrc'),
-  songName = document.querySelector('#songName'),
-  songArtist = document.querySelector('#songArtist');
-
-addSongBtn.onclick = function(e) {
-  var params = {
-    src: songSrc.value,
-    name: songName.value,
-    artist: songArtist.value
-  };
-
-  makePostRequest(params, "http://192.168.0.100:3000/song");
-}
+// var addSongBtn = document.querySelector('#addSong'),
+//   songSrc = document.querySelector('#songSrc'),
+//   songName = document.querySelector('#songName'),
+//   songArtist = document.querySelector('#songArtist');
+//
+// addSongBtn.onclick = function(e) {
+//   var params = {
+//     src: songSrc.value,
+//     name: songName.value,
+//     artist: songArtist.value
+//   };
+//
+//   makePostRequest(params, "http://192.168.0.100:3000/song");
+// }
 
 var _getUpvoteBtn = function() {
   var btn = document.createElement('button');
@@ -107,7 +106,7 @@ var upvote = function(event) {
       };
 
       /* make post request */
-      makePostRequest(params, "http://192.168.0.100:3000/upvote" + '/' + idx);
+      makePostRequest(params, "http://192.168.0.104:3000/upvote" + '/' + idx);
     }
   });
 }

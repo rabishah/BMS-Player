@@ -1,13 +1,34 @@
 {
   "list": [{
     "id": 0,
+    "name": "Manickyachirakulla",
+    "artist": "Idukki gold",
+    "path": "./songs/Manickyachirakulla.mp3",
+    "state": "0",
+    "upvotes": "0"
+  },{
+    "id": 1,
+    "name": "Snow (Hey Oh!)",
+    "artist": "Red Hot Chilli Peppers",
+    "path": "./songs/snow.mp3",
+    "state": "0",
+    "upvotes": "0"
+  },{
+    "id": 2,
+    "name": "Marchin On",
+    "artist": "One republic",
+    "path": "./songs/marchin.mp3",
+    "state": "0",
+    "upvotes": "0"
+  },{
+    "id": 3,
     "name": "A Great Day For Freedom",
     "artist": "Pink Floyd",
     "path": "./songs/agreatdayforfreedom.mp3",
     "state": "0",
     "upvotes": "0"
   },{
-    "id": 1,
+    "id": 4,
     "name": "Lost For Words",
     "artist": "Pink Floyd",
     "path": "./songs/lostforwords.mp3",

@@ -1,7 +1,7 @@
 body {
   width: 90%;
   margin: auto;
-  font-size: 19px;
+  font-size: 20px;
   text-align: center;
   color: #333;
 }
@@ -13,6 +13,12 @@ body {
 
 #playlist li {
   margin: 20px;
+}
+
+.artist {
+  margin-left: 10px;
+  font-style: italic;
+  font-size: 16px;
 }
 
 h1 {
